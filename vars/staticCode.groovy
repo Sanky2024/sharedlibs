@@ -3,8 +3,8 @@ def call(){
             {
                 scannerHome = tool "${SONARSCANNER}"
             }
-            steps
-            {
+           
+            
                withSonarQubeEnv("${SONARSERVER}")
                {
                    sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
@@ -17,4 +17,4 @@ def call(){
                    -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml'''
               }
   }
-} 
+
